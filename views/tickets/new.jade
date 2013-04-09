@@ -1,0 +1,27 @@
+h1 Ticket Nuevo
+
+form(method="POST", action="/tickets") 
+
+	p
+		label(for="number") Nº. Ticket<br />
+		input#number(name="number") 
+	p
+		label(for="fecha") Fecha<br />
+		input#fecha(name="fecha")
+	p
+		label(for="mobile") Mobil Asociado<br />
+		input#mobile(name="mobile") 
+	p
+		label(for="items") Desglose Ticket<br />
+		textarea#items(name="items")
+	p
+		label(for="price") Precio<br />
+		input#price(name="price")
+	p
+		label(for="vat") IVA<br />
+		input#vat(name="vat")
+	p
+		label(for="total") Precio Total<br />
+		input#total(name="total")		
+	p
+		input(type="submit", value="Crear Ticket")

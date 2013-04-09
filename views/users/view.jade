@@ -1,0 +1,7 @@
+h1= user.name
+p= user.username
+
+
+form(action="/users/" + encodeURIComponent(user.username), method="POST") 
+	input(name="_method", type="hidden", value="DELETE") 
+	input(type="submit", value="Delete")

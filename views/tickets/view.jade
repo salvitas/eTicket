@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+	h1= ticket.number
+
+	h2 Mobil Asociado - 
+		=ticket.mobile
+
+	p= ticket.items
+
+	p= ticket.price
+	p= ticket.vat
+	p= ticket.total
+
+	form(action="/tickets/" + encodeURIComponent(ticket.number), method="POST") 
+		input(name="_method", type="hidden", value="DELETE") 
+		input(type="submit", value="Delete")

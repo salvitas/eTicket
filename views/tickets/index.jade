@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+	h1 Tickets
+	p
+		a(href="/tickets/new") Crear nuevo ticket
+		ul
+			- for(var t in tickets) {
+			li
+				a(href="/tickets/" + encodeURIComponent(tickets[t].number))= tickets[t].number
+			- }
+	
+	- if (page > 0) {
+		a(href="?page=" + (page - 1)) Previous &nbsp;
+	- }
+	- if(!lastPage) {
+		a(href="?page=" + (page + 1)) Next
+	- }

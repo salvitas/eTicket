@@ -1,0 +1,24 @@
+h1= ticket.number
+
+form(action="/tickets/" + encodeURIComponent(ticket.number), method="POST") 
+	input(name="_method", type="hidden", value="PUT")
+	p
+		label(for="number") Nº. Ticket<br />
+		input#number(name="number", value=ticket.number) 
+	p
+		label(for="mobile") Mobil Asociado<br />
+		input#mobile(name="mobile", value=ticket.mobile) 
+	p
+		label(for="items") Desglose Ticket<br />
+		textarea#items(name="items", value=ticket.items)
+	p
+		label(for="price") Precio<br />
+		input#price(name="price", value=ticket.price)
+	p
+		label(for="vat") IVA<br />
+		input#vat(name="vat", value=ticket.vat)
+	p
+		label(for="total") Precio Total<br />
+		input#total(name="total", value=ticket.total)		
+	p
+		input(type="submit", value="Editar Ticket")
